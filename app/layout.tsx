@@ -9,7 +9,7 @@ import {
 } from '@clerk/nextjs'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
-import PageHeader from '@/components/page-header'
+import PageHeader from '@/components/page-header';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -34,8 +34,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-          
+        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>     
             <PageHeader />
           {children}
         </body>
