@@ -19,8 +19,8 @@ const NewProjBtn = () => {
     return (
         <Dialog>
   <DialogTrigger asChild>
-    <Button>
-        <Plus className="w-4 h-4 mr-0.5"/>Create Doggie Project</Button></DialogTrigger>
+    <Button className="rounded-full">
+        <Plus className="w-4 h-4"/></Button></DialogTrigger>
   <DialogContent className="sm:max-w-[525px] rounded-md">
     <DialogHeader>
       <DialogTitle>New Doggie Project</DialogTitle>
