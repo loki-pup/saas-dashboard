@@ -36,7 +36,7 @@ const ProjectList = (props: Props) => {
                             </CardHeader>
                             <CardFooter>
                                 <Link href={`/projects/${project.id}`}>
-                                    <Button>View Project</Button>
+                                    <Button className="cursor-pointer">View Project</Button>
                                 </Link>
                             </CardFooter>
                         </Card>
