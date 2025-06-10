@@ -22,18 +22,18 @@ import Link from "next/link";
     return (
 <DropdownMenu open={open} onOpenChange={toggleMenu}>
   <DropdownMenuTrigger asChild>
-    <Button onClick={toggleMenu} className="mr-4" variant={"secondary"}>
-    {open ?  <X className="w-6 h-6"/> :  <Menu className="w-6 h-6"/>}
+    <Button onClick={toggleMenu} className="mr-4 cursor-pointer" variant={"secondary"}>
+    {open ?  <X className="w-6 h-6 "/> :  <Menu className="w-6 h-6"/>}
     </Button>
     </DropdownMenuTrigger>
   <DropdownMenuContent>
-    <DropdownMenuItem asChild>
+    <DropdownMenuItem asChild className="cursor-pointer">
         <Link href="/dashboard" className="flex">
         <Folder className="h-4 w-4 mr-2"/>
         <span>Projects</span>
         </Link>
         </DropdownMenuItem>
-    <DropdownMenuItem asChild>
+    <DropdownMenuItem asChild className="cursor-pointer">
     <Link href="/payments" className="flex">
         <CreditCard className="h-4 w-4 mr-2"/>
         <span>Billing</span>

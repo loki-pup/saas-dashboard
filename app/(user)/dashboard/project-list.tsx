@@ -13,7 +13,7 @@ import { Button }  from "@/components/ui/button";
 import Link from "next/link";
 import SubscribeBtn from "../payments/subscribe-btn";
 import { monthlyPlanId } from "@/lib/payment";
-
+import { Lock } from "lucide-react";
 
 type Project = InferSelectModel<typeof projects>;
 
@@ -44,7 +44,20 @@ const ProjectList = (props: Props) => {
                         </Card>
                     </li>
                 ))}
+                <Card className="max-w-[350px] h-full flex flex-col bg-gray-300">
+                    <CardHeader className="flex-1">
+                        <CardTitle className="flex flex-row items-center text-lg">
+                            <Lock className="h-5 w-5 mr-2"/>
+                            <span>Upgrade to Premium</span>
+                        </CardTitle>
+                        <CardDescription >
+                            Unlock unlimited projects
+                        </CardDescription>
+                    </CardHeader>
+                <CardFooter className="justify-center">
                 <SubscribeBtn price={monthlyPlanId}/>
+                </CardFooter>
+                </Card>
             </ul>
         </div>
     )
