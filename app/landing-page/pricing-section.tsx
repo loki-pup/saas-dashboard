@@ -55,10 +55,10 @@ export const pricingPlans: PricingPlan[] = [
 const PricingSection = () => {
     return (
         <div className="text-center">
-            <h1 className="capitalize text-3xl">
+            <h1 className="font-bold text-2xl">
                 Pricing
             </h1>
-            <h2 className="font-extrabold text-2xl mb-8 pt-3">
+            <h2 className="font-semibold text-xl mb-8 pt-3">
                 Flexible Pricing to Fit Your Needs
             </h2>
             <div className="mt-10 grid items-center grid-cols-1 md:grid-cols-3 gap-5 max-w-screen-xl">
