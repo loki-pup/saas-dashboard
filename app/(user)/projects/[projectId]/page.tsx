@@ -37,7 +37,11 @@ const project = projects[0];
             <h2 className="text-primary-background text-base mb-2">{project.description}</h2>
             </div>
             <div className="flex flex-col">
-            {project.url ? <Link href={project.url} className="text-indigo-700 underline flex items-center">
+            {project.url ?  <Link
+      href={project.url.startsWith('http://') || project.url.startsWith('https://') 
+        ? project.url 
+        : `https://${project.url}`}
+            className="text-indigo-700 underline flex items-center">
                 <Globe className="w-4 h-4 mr-1"/>
                 <span className="text-sm">Visit site</span></Link> : null}
             <Link href={`/projects/${projectId}/instructions`} className="text-indigo-700 underline flex items-center mt-2">
