@@ -1,22 +1,21 @@
 import SubscribeBtn from "../subscribe-btn";
 import { monthlyPlanId, yearlyPlanId } from "@/lib/payment";
 
-type PageProps = {
-  searchParams?: {
-    plan?: string;
-  };
-};
-
-const page = ({ searchParams }: PageProps) => {
+// ✅ Do not declare or import PageProps
+// ✅ Just annotate the function inline
+export default function Page({
+  searchParams,
+}: {
+  searchParams?: { plan?: string };
+}) {
   const planId = searchParams?.plan === "monthly" ? monthlyPlanId : yearlyPlanId;
-    return (
-        <div className="flex border p-4 rounded-md flex-col">
-        <h1 className="text-2xl font-bold">Start your subscription now:</h1>
-        <div className="w-fit mt-3">
-            <SubscribeBtn price={planId}/>
-        </div>
-        </div>
-    )
-}
 
-export default page;
+  return (
+    <div className="flex border p-4 rounded-md flex-col">
+      <h1 className="text-2xl font-bold">Start your subscription now:</h1>
+      <div className="w-fit mt-3">
+        <SubscribeBtn price={planId} />
+      </div>
+    </div>
+  );
+}
