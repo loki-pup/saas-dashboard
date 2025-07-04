@@ -6,15 +6,16 @@ import { Globe, ChevronLeft, Code } from "lucide-react";
 import Table from "@/components/table";
 
 
-const page = async ({ params} : {
-    params: {
-        projectId: string
-    }
-}) => {
-    if (!params.projectId) return (<div>Invalid Project Id</div>);
+export type paramsType = Promise<{ projectId: string }>;
+
+
+export default async function page(props: { params: paramsType }) {
+  const { projectId } = await props.params;
+
+    if (!projectId) return (<div>Invalid Project Id</div>);
 
     const projects = await db.query.projects.findMany({
-        where: (eq(dbProjects.id, parseInt(params.projectId))),
+        where: (eq(dbProjects.id, parseInt(projectId))),
         with: {
             feedbacks: true
         }
@@ -39,7 +40,7 @@ const project = projects[0];
             {project.url ? <Link href={project.url} className="text-indigo-700 underline flex items-center">
                 <Globe className="w-4 h-4 mr-1"/>
                 <span className="text-sm">Visit site</span></Link> : null}
-            <Link href={`/projects/${params.projectId}/instructions`} className="text-indigo-700 underline flex items-center mt-2">
+            <Link href={`/projects/${projectId}/instructions`} className="text-indigo-700 underline flex items-center mt-2">
             <Code className="w-4 h-4 mr-1"/>
             <span className="text-sm">Embed Code</span>
             </Link>
@@ -52,4 +53,3 @@ const project = projects[0];
     )
 }
 
-export default page;
