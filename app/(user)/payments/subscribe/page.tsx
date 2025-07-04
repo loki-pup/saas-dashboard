@@ -2,11 +2,11 @@ import SubscribeBtn from "../subscribe-btn";
 import { monthlyPlanId, yearlyPlanId } from "@/lib/payment";
 
 const page = ({ searchParams } : {
-    searchParams : {
-        plan: string
+    searchParams?: {
+        plan?: string
     }
 }) => {
-    const { plan } = searchParams;
+    const  plan  = searchParams?.plan;
     const planId = plan === "monthly" ? monthlyPlanId : yearlyPlanId;
 
     return (

@@ -23,11 +23,11 @@ const page = ({ params} : {
             <p className="text-lg text-secondary-foreground">Embed the code in site</p>
             <div className="bg-blue-950 rounded-md mt-6 p-6 relative">
             <code className="text-white">
-                {`<my-widget project-id="${params.projectId}"></my-widget>`}
+                {`<doggie-widget project-id="${params.projectId}"></doggie-widget>`}
                 <br />
                 {`<script src="${process.env.WIDGET_URL}/widget.umd.js"><\script>`}
             </code>
-            <CopyBtn text={`<my-widget project="${params.projectId}"></my-widget>\n<script src="${process.env.WIDGET_URL}/widget.umd.js"><\script>`}/>
+            <CopyBtn text={`<doggie-widget project="${params.projectId}"></doggie-widget>\n<script src="${process.env.WIDGET_URL}/widget.umd.js"><\script>`}/>
             </div>
         </div>
     )
