@@ -1,12 +1,12 @@
 import SubscribeBtn from "../subscribe-btn";
 import { monthlyPlanId, yearlyPlanId } from "@/lib/payment";
 
-const page =  async ({ searchParams }: {
-  searchParams: {
-    plan: string
-  }
-}) => {
-  const { plan } = searchParams;
+export type paramsType = Promise<{ plan: string }>;
+
+
+export default async function page(props: { params: paramsType }) {
+  const { plan } = await props.params;
+
 
   const planId = plan === "monthly" ? monthlyPlanId : yearlyPlanId;
 
@@ -20,4 +20,3 @@ const page =  async ({ searchParams }: {
   )
 }
 
-export default page;
