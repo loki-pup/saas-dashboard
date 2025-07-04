@@ -19,7 +19,7 @@ const CopyBtn = ( { text }: {
     return (
         <Tooltip>
   <TooltipTrigger asChild>
-  <button onClick={() => copyToClipboard(text)} className="text-slate-50 absolute p-3 right-0 top-0"><Clipboard /></button>
+  <button onClick={() => copyToClipboard(text)} className="text-slate-50 absolute p-3 right-0 top-0 cursor-pointer"><Clipboard /></button>
   </TooltipTrigger>
   <TooltipContent>
     <p>Copy code</p>
