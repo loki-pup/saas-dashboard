@@ -2,8 +2,6 @@ import { InferSelectModel } from "drizzle-orm";
 import { projects } from "@/db/schema";
 import {
     Card,
-    CardAction,
-    CardContent,
     CardDescription,
     CardFooter,
     CardHeader,
