@@ -15,7 +15,7 @@ export default async function page(props: { params: paramsType }) {
 
     return (
         <div>
-                        <div>
+            <div>
                 <Link href={`/projects/${projectId}`} className="flex w-fit items-center text-indigo-700 mb-5">
                     <ChevronLeft className="h-5 w-5 mr-1" />
                     <span className="text-base">Back to project</span>
