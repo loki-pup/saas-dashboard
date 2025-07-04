@@ -29,7 +29,7 @@ export default async function page(props: { params: paramsType }) {
                 <br />
                 {`<script src="${process.env.WIDGET_URL}/widget.umd.js"></script>`}
             </code>
-            <CopyBtn text={`<doggie-widget project="${projectId}"></doggie-widget>\n<script src="${process.env.WIDGET_URL}/widget.umd.js"></script>`}/>
+            <CopyBtn text={`<doggie-widget project-id="${projectId}"></doggie-widget>\n<script src="${process.env.WIDGET_URL}/widget.umd.js"></script>`}/>
             </div>
         </div>
     )
