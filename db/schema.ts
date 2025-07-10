@@ -24,6 +24,8 @@ export const feedbacks = pgTable("feedbacks",{
   userName: text("user_name"),
   userEmail: text("user_email"),
   message: text("message"),
+  photoBase64: text("photo_base64"),
+  photoName: text("photo_name"),
 });
 
 export const feedbacksRelations = relations(

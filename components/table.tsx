@@ -31,6 +31,7 @@ function Table(props: { data: Feedback[] }) {
     () => [
       {
         accessorKey: 'userName',
+        header: () => 'Name',
         cell: info => info.getValue(),
         footer: props => props.column.id,
       },
@@ -57,6 +58,28 @@ function Table(props: { data: Feedback[] }) {
         size: 400,
         minSize: 200,
         maxSize: 600,
+      },
+      {
+        accessorKey: 'photoName',
+        header: () => 'Photo',
+        filterFn: 'includesString',
+        cell: info => {
+          const fileName = info.getValue() as string;
+          const base64Data = info.row.original.photoBase64 as string;
+
+          return base64Data ? (
+            <div className='flex flex-col space-y-1'>
+              <span className='text-sm text-gray-700'>{fileName}</span>
+              <img 
+              className='w-30 h-30 object-contain'
+              src={base64Data}
+              alt={fileName} />
+            </div>
+          ) : (
+            <span>N/A</span>
+          );
+        },
+        footer: props => props.column.id,
       },
     ],
     []
