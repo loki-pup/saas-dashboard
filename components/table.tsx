@@ -71,7 +71,7 @@ function Table(props: { data: Feedback[] }) {
             <div className='flex flex-col space-y-1'>
               <span className='text-sm text-gray-700'>{fileName}</span>
               <img 
-              className='w-30 h-30 object-contain'
+              className='w-[130px] h-[130px] object-contain'
               src={base64Data}
               alt={fileName} />
             </div>
