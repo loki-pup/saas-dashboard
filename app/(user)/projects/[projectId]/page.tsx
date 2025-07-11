@@ -1,5 +1,5 @@
 import { db } from "@/db";
-import { eq } from "drizzle-orm";
+import { eq, and } from "drizzle-orm";
 import { projects as dbProjects } from "@/db/schema";
 import Link from "next/link";
 import { Globe, ChevronLeft, Code } from "lucide-react";
