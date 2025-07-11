@@ -27,6 +27,8 @@ export default async function page(props: { params: paramsType }) {
 
 const project = projects[0];
 
+  if (!project) return (<div>You don't have access to it</div>);
+
     return (
         <div>
             <div>
