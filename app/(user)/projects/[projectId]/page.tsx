@@ -14,8 +14,8 @@ export default async function page(props: { params: paramsType }) {
   if (!userId) return (<div>Unauthorized access</div>)
   
   const { projectId } = await props.params;
-
-  //const idNum  = Number(projectId);
+  
+  console.log("projectId param:", props.params.projectId);
 
   const isNumericId = /^\d+$/.test(projectId);
 
