@@ -15,7 +15,8 @@ export default async function page(props: { params: paramsType }) {
   
   const { projectId } = await props.params;
   
-  console.log("projectId param:", props.params.projectId);
+console.log("projectId param:", projectId);
+console.log("Regex match:", /^\d+$/.test(projectId));
 
   const isNumericId = /^\d+$/.test(projectId);
 
