@@ -4,18 +4,22 @@ import { projects as dbProjects } from "@/db/schema";
 import Link from "next/link";
 import { Globe, ChevronLeft, Code } from "lucide-react";
 import Table from "@/components/table";
-
+import { auth } from "@clerk/nextjs/server";
 
 export type paramsType = Promise<{ projectId: string }>;
 
 
 export default async function page(props: { params: paramsType }) {
+  const { userId } =await auth();
+  if (!userId) return (<div>Unauthorized access</div>)
+  
   const { projectId } = await props.params;
 
     if (!projectId) return (<div>Invalid Project Id</div>);
 
     const projects = await db.query.projects.findMany({
-        where: (eq(dbProjects.id, parseInt(projectId))),
+        where: and(eq(dbProjects.id, parseInt(projectId)),
+                  eq(dbProjects.userId, userId)),
         with: {
             feedbacks: true
         }
