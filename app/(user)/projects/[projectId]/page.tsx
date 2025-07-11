@@ -15,9 +15,11 @@ export default async function page(props: { params: paramsType }) {
   
   const { projectId } = await props.params;
 
-  const idNum  = Number(projectId);
+  //const idNum  = Number(projectId);
 
-    if (!projectId || !Number.isInteger(idNum)) return (<div>Invalid Project Id</div>);
+  const isNumericId = /^\d+$/.test(projectId);
+
+    if (!projectId || !isNumericId) return (<div>Invalid Project Id</div>);
 
     const projects = await db.query.projects.findMany({
         where: and(eq(dbProjects.id, parseInt(projectId)),
